@@ -1,0 +1,13 @@
+V[Unit]
+Description=Service Check Plate Number
+After=network.service
+
+[Service]
+Type=simple
+Restart=always
+RestartSec=1
+RemainAfterExit=yes
+ExecStart=sudo python /home/pi/check_plate_number.py
+
+[Install]
+WantedBy=multi-user.target
